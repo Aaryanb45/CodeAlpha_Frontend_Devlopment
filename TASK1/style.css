@@ -41,6 +41,7 @@ body{
 
 
 .img{
+    border-radius:34px
     margin: 20px;
     padding: 30px;
     display: grid;
