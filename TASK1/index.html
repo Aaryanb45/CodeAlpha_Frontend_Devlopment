@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMAGE GALLERY</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>IMAGE GALLERY</h1>
+    <div class="flexdirection" id="flexdirectionbox">
+
+      <span class="nav left" onclick="navigate(-1)">&#10094;</span>
+      <img src="/TASK1/image1.jpeg" id="fullImg" />
+      <span class="nav right" onclick="navigate(1)">&#10095;</span>
+      <span class="close" onclick="closefullimg()"> X</span>
+    </div>
+
+    <div class="img">
+      <div class="img1">
+        <img src="/TASK1/image1.jpeg" onclick="openfullImg(this.src,0)" />
+      </div>
+
+      <div class="img2">
+        <img src="/TASK1/image2.png" onclick="openfullImg(this.src,1)" />
+      </div>
+
+      <div class="img3">
+        <img src="/TASK1/image3.png" onclick="openfullImg(this.src,2)" />
+      </div>
+
+      <div class="img4">
+        <img src="/TASK1/image4.png" onclick="openfullImg(this.src,3)" />
+      </div>
+
+      <div class="img5">
+        <img src="/TASK1/image5.png" onclick="openfullImg(this.src,4)" />
+      </div>
+
+      <div class="img6">
+        <img src="/TASK1/image6.png" onclick="openfullImg(this.src,5)" />
+      </div>
+
+      <div class="img7">
+        <img src="/TASK1/image7.jpeg" onclick="openfullImg(this.src,6)" />
+      </div>
+
+      <div class="img8">
+        <img src="/TASK1/image8.jpeg" onclick="openfullImg(this.src,7)" />
+      </div>
+
+      <div class="img9">
+        <img src="/TASK1/image00.png" onclick="openfullImg(this.src,8)" />
+      </div>
+    </div>
+
+    <!-- <script>
+        var flexdirectionbox =document.getElementById("flexdirectionbox");
+        var fullImg = document.getElementById("fullImg");
+
+        function openfullImg(pic)
+        {
+          flexdirectionbox.style.display ="flex";
+          fullImg.src=pic;
+        }
+
+        function closefullimg()
+        {
+          flexdirectionbox.style.display ="none";
+        }
+
+      </script> -->
+
+    <!-- </body>
+</html> -->
+
+    <script>
+      var flexdirectionbox = document.getElementById("flexdirectionbox");
+      var fullImg = document.getElementById("fullImg");
+      var images = [
+        "",
+        "/TASK1/image2.png",
+        "/TASK1/image3.png",
+        "/TASK1/image4.png",
+        "/TASK1/image5.png",
+        "/TASK1/image6.png",
+        "/TASK1/image7.jpeg",
+        "/TASK1/image8.jpeg",
+        "/TASK1/image00.png",
+      ];
+      var currentIndex = 0;
+
+      function openfullImg(pic, index) {
+        flexdirectionbox.style.display = "flex";
+        fullImg.src = pic;
+        currentIndex = index;
+      }
+
+      function closefullimg() {
+        flexdirectionbox.style.display = "none";
+      }
+
+      function navigate(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+          currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+          currentIndex = 0;
+        }
+        fullImg.src = images[currentIndex];
+      }
+    </script>
+  </body>
+</html>
